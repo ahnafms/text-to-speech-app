@@ -19,7 +19,7 @@
       <button @click="statePause">{{ this.isPause ? 'Resume' : 'Pause' }}</button>
       <button @click="stateCancel">Cancel</button>
       <button @click="speechToText" type="submit">Play</button>
-      <a id="downloadLink" download="" @click="" href=""></a>
+      <a id="downloadLink"></a>
     </div>
   </div>
 </template>
