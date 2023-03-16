@@ -1,8 +1,17 @@
 <template>
-  <div class="flex h-screen flex-col justify-center">
+  <div class="bg gray-50 flex min-h-screen flex-col items-center justify-center px-16">
+    <div class="relative w-full max-w-lg">
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
+    </div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000">
+    </div>
+  </div>
     <div class="w-fit mx-auto">
-      <div class="text-7xl">hgallo</div>
-      <textarea class="" v-model="text" type="text" name="" placeholder="send text" id="" />
+      <div class="text-7xl">TEXT TO SPEECH KELOMPOK 2</div>
+      <div class="mt-10">
+      <textarea class="border-double border-4 border-black-500 w-full" v-model="text" type="text" name="" placeholder=" Send Text " id="" />
+      </div>
       <select v-model="voiceSelect" name="" id="voiceSelect" ref="voiceSelect">
         <option data-name="Daniel" data-lang="en-GB" selected>Daniel - (en-GB) - DEFAULT</option>
         <option
@@ -16,10 +25,14 @@
       </select>
       <input id="pitch" type="range" v-model="pitch" min="0" max="2" step="0.2" />
       <input id="rate" type="range" v-model="rate" min="0" max="10" step="0.5" />
-      <button @click="statePause">{{ this.isPause ? 'Resume' : 'Pause' }}</button>
-      <button @click="stateCancel">Cancel</button>
-      <button @click="speechToText" type="submit">Play</button>
-      <a id="downloadLink"></a>
+      <div class="mt-5 flex justify-evenly mx-auto">
+      <button class="bg-gray-300 hover:bg-gray-400 rounded-lg py-2 px-5" @click="statePause">{{ this.isPause ? 'Resume' : 'Pause' }}</button>
+      <button class="bg-gray-300 hover:bg-gray-400 rounded-lg py-2 px-5" @click="stateCancel">Cancel</button>
+      <button class="bg-gray-300 hover:bg-gray-400 rounded-lg py-2 px-5" @click="speechToText" type="submit">Play</button>
+      </div>
+      <div class="mt-8 flex justify-center">
+      <a id="downloadLink"> Download </a>
+      </div>
     </div>
   </div>
 </template>
