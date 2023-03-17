@@ -98,9 +98,11 @@
           </div>
         </div>
 
-        <div class="text-7xl border-">Text-to-Speech</div>
+        <div class="text-7xl flex items-center mt-10 space-x-6 justify-center text-center">
+          Text-to-Speech
+        </div>
 
-        <div class="flex items-center mt-10 space-x-6 justify-between">
+        <div class="flex items-center mt-10 space-x-6 justify-center">
           <textarea
             class="border-solid rounded-lg"
             v-model="text"
