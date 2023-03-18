@@ -20,7 +20,9 @@
       </div>
       <!-- Right Buttons Menu -->
       <div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
-        <button class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70">
+        <button
+          class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70 border-4 border-b-8 border-black"
+        >
           Welcome
         </button>
       </div>
@@ -42,7 +44,7 @@
         <div class="mx-auto lg:mx-0">
           <a
             href="#tts"
-            class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70"
+            class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70 border-4 border-b-8 border-black"
             >Get Started</a
           >
         </div>
@@ -82,16 +84,16 @@
   </section>
 
   <!-- Text-to-Speech Section -->
-  <section id="tts">
+  <section>
     <div class="flex h-screen flex-col justify-center">
-      <div class="w-fit mx-auto">
+      <div class="mx-auto rounded-xl border-4 border-b-8 border-black p-28 w-3/6" id="tts">
         <div class="relative">
-          <div class="-rotate-[23deg] absolute -left-1/2">
+          <div class="-rotate-[23deg] absolute -left-96 -top-24">
             <lottie-player
               src="https://assets5.lottiefiles.com/private_files/lf30_dfxejf4d.json"
               background="transparent"
               speed="1"
-              style="width: 150px; height: 150px"
+              style="width: 200px; height: 200px"
               loop
               autoplay
             ></lottie-player>
@@ -102,9 +104,9 @@
           Text-to-Speech
         </div>
 
-        <div class="flex items-center mt-10 space-x-6 justify-center">
+        <div class="flex flex-col items-center mt-10 space-x-6 justify-center w-full">
           <textarea
-            class="border-solid rounded-lg"
+            class="border-solid rounded-lg w-full"
             v-model="text"
             type="text"
             name=""
@@ -113,8 +115,8 @@
           />
 
           <!-- Dropdown menu -->
-          <div class="flex justify-center">
-            <div class="mb-3 xl:w-96">
+          <div class="flex items-center justify-center mt-10">
+            <div class="mb-3 xl:w-96 flex items-center justify-center">
               <select
                 data-te-select-init
                 v-model="voiceSelect"
@@ -149,7 +151,7 @@
         <!-- Buttons -->
         <div class="flex items-center justify-center space-x-6 mt-8">
           <button
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            class="text-white border-2 border-b-8 border-black bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
             @click="speechToText"
             type="submit"
           >
@@ -167,14 +169,14 @@
             </svg>
           </button>
           <button
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-4 py-3 text-center mr-2 mb-2"
+            class="text-white bg-gradient-to-r border-2 border-b-8 border-black from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-4 py-3 text-center mr-2 mb-2"
             @click="statePause"
           >
             {{ this.isPause ? 'Resume' : 'Pause' }}
           </button>
 
           <button
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            class="text-white bg-gradient-to-r border-2 border-b-8 border-black from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
             @click="stateCancel"
           >
             <svg
@@ -196,6 +198,18 @@
           class="flex items-center justify-center space-x-6 mt-8 border-solid border-black rounded-sl"
         >
           <a id="downloadLink"></a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="-rotate-[23deg] absolute right-16 -bottom-20">
+          <lottie-player
+            src="https://assets4.lottiefiles.com/packages/lf20_ngCmDSkEvD.json"
+            background="transparent"
+            speed="1"
+            style="width: 400px; height: 400px"
+            loop
+            autoplay
+          ></lottie-player>
         </div>
       </div>
     </div>
