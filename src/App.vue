@@ -221,37 +221,37 @@ export default {
         {
           name: 'Microsoft David - English (United States)',
           lang: 'en-US',
-          tranlate: 'en'
+          translate: 'en'
         },
         {
           name: 'Microsoft Zira - English (United States)',
           lang: 'en-US',
-          tranlate: 'en'
+          translate: 'en'
         },
         {
           name: 'Google español',
           lang: 'es-ES',
-          tranlate: 'es'
+          translate: 'es'
         },
         {
           name: 'Google Bahasa Indonesia',
           lang: 'id-ID',
-          tranlate: 'id'
+          translate: 'id'
         },
         {
           name: 'Google italiano',
           lang: 'it-IT',
-          tranlate: 'it'
+          translate: 'it'
         },
         {
           name: 'Google 日本語',
           lang: 'ja-JP',
-          tranlate: 'ja'
+          translate: 'ja'
         },
         {
           name: 'Google 한국의',
           lang: 'ko-KR',
-          tranlate: 'ko'
+          translate: 'ko'
         }
       ],
       file: null,
@@ -266,7 +266,7 @@ export default {
   },
   methods: {
     onVoiceSelect() {
-      this.app.to = this.voiceSelect.tranlate
+      this.app.to = this.voiceSelect.translate
     },
     speechToText(lang, name) {
       const populateVoiceList = window.speechSynthesis.getVoices()
@@ -339,7 +339,8 @@ export default {
         reader.onerror = (err) => console.log(err)
         reader.readAsText(this.file)
       }
-    }
+    },
+    
   }
 }
 </script>
