@@ -20,9 +20,7 @@
       </div>
       <!-- Right Buttons Menu -->
       <div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
-        <button
-          class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70 border-4 border-b-8 border-black"
-        >
+        <button class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70">
           Welcome
         </button>
       </div>
@@ -44,7 +42,7 @@
         <div class="mx-auto lg:mx-0">
           <a
             href="#tts"
-            class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70 border-4 border-b-8 border-black"
+            class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70"
             >Get Started</a
           >
         </div>
@@ -84,16 +82,16 @@
   </section>
 
   <!-- Text-to-Speech Section -->
-  <section>
+  <section id="tts">
     <div class="flex h-screen flex-col justify-center">
-      <div class="mx-auto rounded-xl border-4 border-b-8 border-black p-28 w-3/6" id="tts">
+      <div class="w-fit mx-auto">
         <div class="relative">
-          <div class="-rotate-[23deg] absolute -left-96 -top-24">
+          <div class="-rotate-[23deg] absolute -left-1/2">
             <lottie-player
               src="https://assets5.lottiefiles.com/private_files/lf30_dfxejf4d.json"
               background="transparent"
               speed="1"
-              style="width: 200px; height: 200px"
+              style="width: 150px; height: 150px"
               loop
               autoplay
             ></lottie-player>
@@ -104,10 +102,10 @@
           Text-to-Speech
         </div>
 
-        <div class="flex flex-col items-center mt-10 space-x-6 justify-center w-full">
+        <div class="flex items-center mt-10 space-x-6 justify-center">
           <textarea
-            class="border-solid rounded-lg w-full"
-            v-model="text"
+            class="border-solid rounded-lg border-slate-200"
+            v-model="app.text"
             type="text"
             name=""
             placeholder="Type your message here"
@@ -115,30 +113,31 @@
           />
 
           <!-- Dropdown menu -->
-          <div class="flex items-center justify-center mt-10">
-            <div class="mb-3 xl:w-96 flex items-center justify-center">
+          <div class="flex justify-center">
+            <div class="mb-3 xl:w-96">
               <select
                 data-te-select-init
                 v-model="voiceSelect"
                 name=""
                 id="voiceSelect"
                 ref="voiceSelect"
+                @change="onVoiceSelect"
                 class="border-solid rounded-lg"
               >
-                <option data-name="Daniel" data-lang="en-GB" selected>
-                  Daniel - (en-GB) - DEFAULT
-                </option>
                 <option
                   v-for="voice in voiceList"
                   :data-name="voice.name"
                   :data-lang="voice.lang"
                   :key="voice"
+                  :value="voice"
+                  :selected="voice.name == 'Microsoft David - English (United States)'"
                 >
                   {{ voice.name }} - {{ voice.lang }}
                 </option>
               </select>
             </div>
           </div>
+          <input type="file" name="readFile" @change="readFile()" ref="doc" />
         </div>
 
         <div class="flex items-center justify-center space-x-4 mt-10">
@@ -151,8 +150,8 @@
         <!-- Buttons -->
         <div class="flex items-center justify-center space-x-6 mt-8">
           <button
-            class="text-white border-2 border-b-8 border-black bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
-            @click="speechToText"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            @click="speechToText(voiceSelect.lang, voiceSelect.name)"
             type="submit"
           >
             <svg
@@ -169,14 +168,14 @@
             </svg>
           </button>
           <button
-            class="text-white bg-gradient-to-r border-2 border-b-8 border-black from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-4 py-3 text-center mr-2 mb-2"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-4 py-3 text-center mr-2 mb-2"
             @click="statePause"
           >
             {{ this.isPause ? 'Resume' : 'Pause' }}
           </button>
 
           <button
-            class="text-white bg-gradient-to-r border-2 border-b-8 border-black from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
             @click="stateCancel"
           >
             <svg
@@ -200,18 +199,6 @@
           <a id="downloadLink"></a>
         </div>
       </div>
-      <div class="relative">
-        <div class="-rotate-[23deg] absolute right-16 -bottom-20">
-          <lottie-player
-            src="https://assets4.lottiefiles.com/packages/lf20_ngCmDSkEvD.json"
-            background="transparent"
-            speed="1"
-            style="width: 400px; height: 400px"
-            loop
-            autoplay
-          ></lottie-player>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -219,6 +206,8 @@
 </template>
 
 <script>
+import { useApp } from './stores'
+
 export default {
   data() {
     return {
@@ -226,37 +215,73 @@ export default {
       isPause: false,
       text: '',
       pitch: 1,
-      rate: 0,
+      rate: 1,
       voiceSelect: '',
       voiceList: [
         {
-          name: 'Samantha',
-          lang: 'en-US'
+          name: 'Microsoft David - English (United States)',
+          lang: 'en-US',
+          tranlate: 'en'
         },
         {
-          name: 'Damayanti',
-          lang: 'id-ID'
+          name: 'Microsoft Zira - English (United States)',
+          lang: 'en-US',
+          tranlate: 'en'
+        },
+        {
+          name: 'Google español',
+          lang: 'es-ES',
+          tranlate: 'es'
+        },
+        {
+          name: 'Google Bahasa Indonesia',
+          lang: 'id-ID',
+          tranlate: 'id'
+        },
+        {
+          name: 'Google italiano',
+          lang: 'it-IT',
+          tranlate: 'it'
+        },
+        {
+          name: 'Google 日本語',
+          lang: 'ja-JP',
+          tranlate: 'ja'
+        },
+        {
+          name: 'Google 한국의',
+          lang: 'ko-KR',
+          tranlate: 'ko'
         }
-      ]
+      ],
+      file: null,
+      translatedText: ''
+    }
+  },
+  setup() {
+    const app = useApp()
+    return {
+      app
     }
   },
   methods: {
-    speechToText() {
-      this.utterance = new SpeechSynthesisUtterance(this.text)
+    onVoiceSelect() {
+      this.app.to = this.voiceSelect.tranlate
+    },
+    speechToText(lang, name) {
       const populateVoiceList = window.speechSynthesis.getVoices()
+      this.utterance = new SpeechSynthesisUtterance(this.app.text)
       for (let i = 0; i < populateVoiceList.length; i++) {
-        if (
-          populateVoiceList[i].name === this.voiceSelect.split(' - ')[0] &&
-          populateVoiceList[i].lang === this.voiceSelect.split(' - ')[1]
-        ) {
+        if (populateVoiceList[i].name === name && populateVoiceList[i].lang === lang) {
           this.utterance.voice = populateVoiceList[i]
-          this.utterance.lang = populateVoiceList[i].lang
+          this.utterance.lang = lang
           this.utterance.pitch = this.pitch
           this.utterance.rate = this.rate
           this.utterance.volume = 100.0
+          window.speechSynthesis.speak(this.utterance)
         }
       }
-      this.generateAudioDownload()
+      this.generateAudioDownload(lang, name)
     },
     statePause() {
       if (this.isPause == true) {
@@ -270,8 +295,7 @@ export default {
     stateCancel() {
       speechSynthesis.cancel(this.utterance)
     },
-
-    generateAudioDownload() {
+    generateAudioDownload(lang, voice) {
       navigator.mediaDevices
         .getUserMedia({ audio: true })
         .then((stream) => {
@@ -297,6 +321,24 @@ export default {
         .catch((error) => {
           console.error('Failed to get user media', error)
         })
+    },
+    readFile() {
+      this.file = this.$refs.doc.files[0]
+      const reader = new FileReader()
+      if (this.file.name.includes('.txt')) {
+        reader.onload = (res) => {
+          this.app.text = res.target.result
+        }
+        reader.onerror = (err) => console.log(err)
+        reader.readAsText(this.file)
+      } else {
+        this.app.text = 'check the console for file output'
+        reader.onload = (res) => {
+          console.log(res.target.result)
+        }
+        reader.onerror = (err) => console.log(err)
+        reader.readAsText(this.file)
+      }
     }
   }
 }
