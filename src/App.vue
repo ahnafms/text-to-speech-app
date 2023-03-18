@@ -192,7 +192,7 @@
             </svg>
           </button>
         </div>
-
+        <div>{{ this.translatedText }}</div>
         <div
           class="flex items-center justify-center space-x-6 mt-8 border-solid border-black rounded-sl"
         >
@@ -207,7 +207,7 @@
 
 <script>
 import { useApp } from './stores'
-
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -282,6 +282,7 @@ export default {
         }
       }
       this.generateAudioDownload(lang, name)
+      this.translateToEng()
     },
     statePause() {
       if (this.isPause == true) {
@@ -340,7 +341,22 @@ export default {
         reader.readAsText(this.file)
       }
     },
-    
+    async translateToEng() {
+      const encodedParams = new URLSearchParams()
+      encodedParams.append('source_language', 'en')
+      encodedParams.append('target_language', 'id')
+      encodedParams.append('text', this.app.text)
+      const res = await axios
+        .post('https://text-translator2.p.rapidapi.com/translate', encodedParams, {
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'X-RapidAPI-Key': 'd579e65668mshcca9d431a96f1fcp1a3811jsnc0007bde774d',
+            'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
+          }
+        })
+        .catch((err) => console.log(err))
+      this.translatedText = res.data.data.translatedText
+    }
   }
 }
 </script>
