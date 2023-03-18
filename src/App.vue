@@ -6,8 +6,11 @@
       <!-- Flex Container For Logo/Menu -->
       <div class="flex items-center space-x-20">
         <!-- Logo -->
-        <img src="https://www.its.ac.id/it/wp-content/uploads/sites/46/2021/11/logo-DTI-border1.png" class="w-28 h-28"
-          alt="" />
+        <img
+          src="https://www.its.ac.id/it/wp-content/uploads/sites/46/2021/11/logo-DTI-border1.png"
+          class="w-28 h-28"
+          alt=""
+        />
         <!-- Navigation Menu -->
         <div class="hidden space-x-12 font-bold lg:flex">
           <a href="#tts" class="text-grayishViolet hover:text-gray-500 cursor-pointer">TTS</a>
@@ -17,7 +20,9 @@
       </div>
       <!-- Right Buttons Menu -->
       <div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
-        <button class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70">
+        <button
+          class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70 border-4 border-b-8 border-black"
+        >
           Welcome
         </button>
       </div>
@@ -37,43 +42,61 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
         <div class="mx-auto lg:mx-0">
-          <a href="#tts"
-            class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70">Get
-            Started</a>
+          <a
+            href="#tts"
+            class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70 border-4 border-b-8 border-black"
+            >Get Started</a
+          >
         </div>
       </div>
 
       <!-- Animation Image -->
       <div class="mb-0 mx-auto pl-28 md:w-180 lg:mb-0 lg:w-1/2">
-        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_daqsbzrp.json" background="transparent"
-          speed="1" style="width: 700px; height: 700px" loop autoplay></lottie-player>
+        <lottie-player
+          src="https://assets8.lottiefiles.com/packages/lf20_daqsbzrp.json"
+          background="transparent"
+          speed="1"
+          style="width: 700px; height: 700px"
+          loop
+          autoplay
+        ></lottie-player>
       </div>
     </div>
 
     <!-- Wave Section -->
     <div class="#ffff">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#f3f4f5" fill-opacity="1"
-          d="M0,32L60,48C120,64,240,96,360,106.7C480,117,600,107,720,128C840,149,960,203,1080,202.7C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-        </path>
+        <path
+          fill="#f3f4f5"
+          fill-opacity="1"
+          d="M0,32L60,48C120,64,240,96,360,106.7C480,117,600,107,720,128C840,149,960,203,1080,202.7C1200,203,1320,149,1380,122.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
       </svg>
       <div class="bg-[#f3f4f5] w-full h-64"></div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#f3f4f5" fill-opacity="1"
-          d="M0,32L60,69.3C120,107,240,181,360,224C480,267,600,277,720,240C840,203,960,117,1080,85.3C1200,53,1320,75,1380,85.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
-        </path>
+        <path
+          fill="#f3f4f5"
+          fill-opacity="1"
+          d="M0,32L60,69.3C120,107,240,181,360,224C480,267,600,277,720,240C840,203,960,117,1080,85.3C1200,53,1320,75,1380,85.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+        ></path>
       </svg>
     </div>
   </section>
 
   <!-- Text-to-Speech Section -->
-  <section id="tts">
+  <section>
     <div class="flex h-screen flex-col justify-center">
-      <div class="w-fit mx-auto">
+      <div class="mx-auto rounded-xl border-4 border-b-8 border-black p-28 w-3/6" id="tts">
         <div class="relative">
-          <div class="-rotate-[23deg] absolute -left-1/2">
-            <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_dfxejf4d.json" background="transparent"
-              speed="1" style="width: 150px; height: 150px" loop autoplay></lottie-player>
+          <div class="-rotate-[23deg] absolute -left-96 -top-24">
+            <lottie-player
+              src="https://assets5.lottiefiles.com/private_files/lf30_dfxejf4d.json"
+              background="transparent"
+              speed="1"
+              style="width: 200px; height: 200px"
+              loop
+              autoplay
+            ></lottie-player>
           </div>
         </div>
 
@@ -82,22 +105,41 @@
         </div>
 
         <div class="flex items-center mt-10 space-x-6 justify-center">
-          <textarea class="border-solid rounded-lg border-slate-200" v-model="app.text" type="text" name=""
-            placeholder="Type your message here" id="" />
+          <textarea
+            class="border-solid rounded-lg border-slate-200"
+            v-model="app.text"
+            type="text"
+            name=""
+            placeholder="Type your message here"
+            id=""
+          />
 
           <!-- Dropdown menu -->
           <div class="flex justify-center">
             <div class="mb-3 xl:w-96">
-              <select data-te-select-init v-model="voiceSelect" name="" id="voiceSelect" ref="voiceSelect"
-                @change="onVoiceSelect" class="border-solid rounded-lg">
-                <option v-for="voice in voiceList" :data-name="voice.name" :data-lang="voice.lang" :key="voice"
-                  :value="voice" :selected="voice.name == 'Microsoft David - English (United States)'">
+              <select
+                data-te-select-init
+                v-model="voiceSelect"
+                name=""
+                id="voiceSelect"
+                ref="voiceSelect"
+                @change="onVoiceSelect"
+                class="border-solid rounded-lg"
+              >
+                <option
+                  v-for="voice in voiceList"
+                  :data-name="voice.name"
+                  :data-lang="voice.lang"
+                  :key="voice"
+                  :value="voice"
+                  :selected="voice.name == 'Microsoft David - English (United States)'"
+                >
                   {{ voice.name }} - {{ voice.lang }}
                 </option>
               </select>
             </div>
           </div>
-          <input type="file" name="readFile" @change="readFile()" ref="doc">
+          <input type="file" name="readFile" @change="readFile()" ref="doc" />
         </div>
 
         <div class="flex items-center justify-center space-x-4 mt-10">
@@ -111,44 +153,74 @@
         <div class="flex items-center justify-center space-x-6 mt-8">
           <button
             class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
-            @click="speechToText(voiceSelect.lang, voiceSelect.name)" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-              <path fill-rule="evenodd"
+            @click="speechToText(voiceSelect.lang, voiceSelect.name)"
+            type="submit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
                 d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-                clip-rule="evenodd" />
+                clip-rule="evenodd"
+              />
             </svg>
           </button>
           <button
             class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-4 py-3 text-center mr-2 mb-2"
-            @click="statePause">
+            @click="statePause"
+          >
             {{ this.isPause ? 'Resume' : 'Pause' }}
           </button>
 
           <button
-            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
-            @click="stateCancel">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-              <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z"
-                clip-rule="evenodd" />
+            class="text-white bg-gradient-to-r border-2 border-b-8 border-black from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            @click="stateCancel"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z"
+                clip-rule="evenodd"
+              />
             </svg>
           </button>
         </div>
 
-        <div class="flex items-center justify-center space-x-6 mt-8 border-solid border-black rounded-sl">
+        <div
+          class="flex items-center justify-center space-x-6 mt-8 border-solid border-black rounded-sl"
+        >
           <a id="downloadLink"></a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="-rotate-[23deg] absolute right-16 -bottom-20">
+          <lottie-player
+            src="https://assets4.lottiefiles.com/packages/lf20_ngCmDSkEvD.json"
+            background="transparent"
+            speed="1"
+            style="width: 400px; height: 400px"
+            loop
+            autoplay
+          ></lottie-player>
         </div>
       </div>
     </div>
   </section>
-  <div>
-    {{ app.text }}
-  </div>
 
   <!-- Footer -->
 </template>
 
 <script>
-import { useApp } from "./stores";
+import { useApp } from './stores'
 
 export default {
   data() {
@@ -197,37 +269,34 @@ export default {
         }
       ],
       file: null,
-      translatedText: '',
+      translatedText: ''
     }
   },
   setup() {
-    const app = useApp();
+    const app = useApp()
     return {
-      app,
-    };
+      app
+    }
   },
   methods: {
     onVoiceSelect() {
-      this.app.text = this.voiceSelect.tranlate;
+      this.app.text = this.voiceSelect.tranlate
     },
     speechToText(lang, name) {
-      const translate = require('bing-translate-api');
-      const populateVoiceList = window.speechSynthesis.getVoices();
-      this.utterance = new SpeechSynthesisUtterance(this.app.text);
+      const translate = require('bing-translate-api')
+      const populateVoiceList = window.speechSynthesis.getVoices()
+      this.utterance = new SpeechSynthesisUtterance(this.app.text)
       for (let i = 0; i < populateVoiceList.length; i++) {
-        if (
-          populateVoiceList[i].name === name &&
-          populateVoiceList[i].lang === lang
-        ) {
-          this.utterance.voice = populateVoiceList[i];
-          this.utterance.lang = lang;
-          this.utterance.pitch = this.pitch;
-          this.utterance.rate = this.rate;
-          this.utterance.volume = 100.0;
-          window.speechSynthesis.speak(this.utterance);
+        if (populateVoiceList[i].name === name && populateVoiceList[i].lang === lang) {
+          this.utterance.voice = populateVoiceList[i]
+          this.utterance.lang = lang
+          this.utterance.pitch = this.pitch
+          this.utterance.rate = this.rate
+          this.utterance.volume = 100.0
+          window.speechSynthesis.speak(this.utterance)
         }
       }
-      this.generateAudioDownload(lang, name);
+      this.generateAudioDownload(lang, name)
     },
     statePause() {
       if (this.isPause == true) {
@@ -247,7 +316,9 @@ export default {
         .then((stream) => {
           const mediaChunks = []
           const mediaRecorder = new MediaRecorder(stream)
-          const populateVoiceList = window.speechSynthesis.getVoices().filter(voice => voice.lang.includes(lang) && voice.name.includes(voice))
+          const populateVoiceList = window.speechSynthesis
+            .getVoices()
+            .filter((voice) => voice.lang.includes(lang) && voice.name.includes(voice))
 
           if (populateVoiceList.length > 0) {
             const selectedVoice = populateVoiceList[0]
@@ -283,23 +354,23 @@ export default {
         })
     },
     readFile() {
-      this.file = this.$refs.doc.files[0];
-      const reader = new FileReader();
-      if (this.file.name.includes(".txt")) {
+      this.file = this.$refs.doc.files[0]
+      const reader = new FileReader()
+      if (this.file.name.includes('.txt')) {
         reader.onload = (res) => {
-          this.app.text = res.target.result;
-        };
-        reader.onerror = (err) => console.log(err);
-        reader.readAsText(this.file);
+          this.app.text = res.target.result
+        }
+        reader.onerror = (err) => console.log(err)
+        reader.readAsText(this.file)
       } else {
-        this.app.text = "check the console for file output";
+        this.app.text = 'check the console for file output'
         reader.onload = (res) => {
-          console.log(res.target.result);
-        };
-        reader.onerror = (err) => console.log(err);
-        reader.readAsText(this.file);
+          console.log(res.target.result)
+        }
+        reader.onerror = (err) => console.log(err)
+        reader.readAsText(this.file)
       }
     }
-  },
+  }
 }
 </script>
