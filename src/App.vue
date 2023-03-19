@@ -86,7 +86,7 @@
   </section>
 
   <!-- Text-to-Speech Section -->
-  <section id="tts" class="bg-[#F9F5EB]">
+  <section id="tts" class="bg-[#F9F5EB] overflow-hidden">
     <div class="flex h-screen flex-col justify-center">
       <div class="w-fit mx-auto bg-white">
         <div class="relative">
