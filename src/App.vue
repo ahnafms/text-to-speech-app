@@ -118,7 +118,7 @@
             </div>
           </div>
 
-          <div class="border-4 border-b-8 border-black rounded-xl p-10">
+          <div class="border-4 border-b-8 border-black rounded-3xl p-10">
             <div class="text-7xl flex items-center mt-10 space-x-6 justify-center text-center">
               Text-to-Speech
             </div>
