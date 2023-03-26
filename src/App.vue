@@ -1,6 +1,8 @@
 <template>
-  <!-- Navbar -->
+
   <main class="overflow-hidden">
+    <!-- Navbar -->
+
     <nav class="relative container mx-auto p-6 font-rubik">
       <!-- Flex Container For All Items -->
       <div class="flex items-center justify-between">
@@ -21,7 +23,10 @@
         </div>
         <!-- Right Buttons Menu -->
         <div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
-          <button class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70">
+
+          <button
+            class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70 border-4 border-b-[10px] border-black"
+          >
             Welcome
           </button>
         </div>
@@ -43,7 +48,7 @@
           <div class="mx-auto lg:mx-0">
             <a
               href="#tts"
-              class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70"
+              class="py-5 px-10 text-2xl font-bold text-white bg-blue-700 rounded-full lg:py-4 hover:opacity-70 border-4 border-b-[10px] border-black"
               >Get Started</a
             >
           </div>
@@ -72,22 +77,25 @@
           ></path>
         </svg>
         <div class="bg-[#f3f4f5] w-full h-64"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#f3f4f5"
-            fill-opacity="1"
-            d="M0,32L60,69.3C120,107,240,181,360,224C480,267,600,277,720,240C840,203,960,117,1080,85.3C1200,53,1320,75,1380,85.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-          ></path>
-        </svg>
+        <div class="bg-[#F9F5EB]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path
+              fill="#f3f4f5"
+              fill-opacity="1"
+              d="M0,32L60,69.3C120,107,240,181,360,224C480,267,600,277,720,240C840,203,960,117,1080,85.3C1200,53,1320,75,1380,85.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+            ></path>
+          </svg>
+        </div>
       </div>
     </section>
 
     <!-- Text-to-Speech Section -->
-    <section id="tts">
+
+    <section id="tts" class="bg-[#F9F5EB] overflow-hidden">
       <div class="flex h-screen flex-col justify-center">
-        <div class="w-fit mx-auto">
+        <div class="w-fit mx-auto bg-white">
           <div class="relative">
-            <div class="-rotate-[23deg] absolute -left-1/2">
+            <div class="-rotate-[23deg] absolute -left-1/4">
               <lottie-player
                 src="https://assets5.lottiefiles.com/private_files/lf30_dfxejf4d.json"
                 background="transparent"
@@ -99,109 +107,156 @@
             </div>
           </div>
 
-          <div class="text-7xl flex items-center mt-10 space-x-6 justify-center text-center">
-            Text-to-Speech
+          <!-- Star Animation -->
+          <!-- Star Animation -->
+          <div class="relative">
+            <div class="-rotate-[23deg] absolute -left-96 -bottom-40">
+              <lottie-player
+                src="https://assets4.lottiefiles.com/packages/lf20_SWAcBE.json"
+                background="transparent"
+                speed="1"
+                style="width: 300px; height: 300px"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
           </div>
 
-          <div class="flex items-center mt-10 space-x-6 justify-center">
-            <textarea
-              class="border-solid rounded-lg border-slate-200"
-              v-model="app.text"
-              type="text"
-              name=""
-              placeholder="Type your message here"
-              id=""
-            />
+          <div class="border-4 border-b-8 border-black rounded-3xl p-10">
+            <div class="text-7xl flex items-center mt-10 space-x-6 justify-center text-center">
+              Text-to-Speech
+            </div>
 
-            <!-- Dropdown menu -->
-            <div class="flex justify-center">
-              <div class="mb-3 xl:w-96">
-                <select
-                  data-te-select-init
-                  v-model="voiceSelect"
-                  name=""
-                  id="voiceSelect"
-                  ref="voiceSelect"
-                  @change="onVoiceSelect"
-                  class="border-solid rounded-lg"
-                >
-                  <option
-                    v-for="voice in voiceList"
-                    :data-name="voice.name"
-                    :data-lang="voice.lang"
-                    :key="voice"
-                    :value="voice"
-                    :selected="voice.name == 'Microsoft David - English (United States)'"
+            <div class="flex items-center mt-10 space-x-6 justify-center">
+              <textarea
+                class="border-solid rounded-lg border-slate-200"
+                v-model="app.text"
+                type="text"
+                name=""
+                placeholder="Type your message here"
+                id=""
+              />
+
+              <!-- Dropdown menu -->
+              <div class="flex justify-center">
+                <div class="mb-3 xl:w-96">
+                  <select
+                    data-te-select-init
+                    v-model="voiceSelect"
+                    name=""
+                    id="voiceSelect"
+                    ref="voiceSelect"
+                    @change="onVoiceSelect"
+                    class="border-solid rounded-lg"
                   >
-                    {{ voice.name }} - {{ voice.lang }}
-                  </option>
-                </select>
+                    <option
+                      v-for="voice in voiceList"
+                      :data-name="voice.name"
+                      :data-lang="voice.lang"
+                      :key="voice"
+                      :value="voice"
+                      :selected="voice.name == 'Microsoft David - English (United States)'"
+                    >
+                      {{ voice.name }} - {{ voice.lang }}
+                    </option>
+                  </select>
+                </div>
               </div>
+              <input type="file" name="readFile" @change="readFile()" ref="doc" />
+            </div>
+
+            <div class="flex items-center justify-center space-x-4 mt-10">
+              <label for="pitch">Pitch</label>
+              <input id="pitch" type="range" v-model="pitch" min="0" max="2" step="0.2" />
+              <label for="rate">Rate</label>
+              <input id="rate" type="range" v-model="rate" min="0" max="10" step="0.5" />
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex items-center justify-center space-x-6 mt-8">
+              <button
+                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2 border-[3px] border-b-[7px] border-black"
+                @click="speechToText(voiceSelect.lang, voiceSelect.name)"
+                type="submit"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button
+                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-4 py-3 text-center mr-2 mb-2 border-[3px] border-b-[7px] border-black"
+                @click="statePause"
+              >
+                {{ this.isPause ? 'Resume' : 'Pause' }}
+              </button>
+
+              <button
+                class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2 border-[3px] border-b-[7px] border-black"
+                @click="stateCancel"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div>{{ this.translatedText }}</div>
+            <div
+              class="flex items-center justify-center space-x-6 mt-8 border-solid border-black rounded-sl"
+            >
+              <a id="downloadLink"></a>
             </div>
             <input type="file" name="readFile" @change="readFile()" ref="doc" />
           </div>
-
-          <div class="flex items-center justify-center space-x-4 mt-10">
-            <label for="pitch">Pitch</label>
-            <input id="pitch" type="range" v-model="pitch" min="0" max="2" step="0.2" />
-            <label for="rate">Rate</label>
-            <input id="rate" type="range" v-model="rate" min="0" max="10" step="0.5" />
+          <!-- Star Animation -->
+          <div class="relative">
+            <div class="-rotate-[23deg] absolute -right-96 -top-80">
+              <lottie-player
+                src="https://assets4.lottiefiles.com/packages/lf20_SWAcBE.json"
+                background="transparent"
+                speed="1"
+                style="width: 300px; height: 300px"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
           </div>
 
-          <!-- Buttons -->
-          <div class="flex items-center justify-center space-x-6 mt-8">
-            <button
-              class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
-              @click="speechToText(voiceSelect.lang, voiceSelect.name)"
-              type="submit"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <button
-              class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-4 py-3 text-center mr-2 mb-2"
-              @click="statePause"
-            >
-              {{ this.isPause ? 'Resume' : 'Pause' }}
-            </button>
-
-            <button
-              class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-xl text-sm px-5 py-2.5 text-center mr-2 mb-2"
-              @click="stateCancel"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
+          <!-- Human Animation -->
+          <div class="relative">
+            <div class="-rotate-[23deg] absolute -right-96 -top-48">
+              <lottie-player
+                src="https://assets4.lottiefiles.com/packages/lf20_ngCmDSkEvD.json"
+                background="transparent"
+                speed="1"
+                style="width: 400px; height: 400px"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
           </div>
-          <div>{{ this.translatedText }}</div>
-          <div
-            class="flex items-center justify-center space-x-6 mt-8 border-solid border-black rounded-sl"
-          >
-            <a id="downloadLink"></a>
-          </div>
+          <!-- End of TTS Feature -->
         </div>
       </div>
     </section>
+    <!-- End of TTS Section -->
   </main>
   <!-- Footer -->
 </template>
