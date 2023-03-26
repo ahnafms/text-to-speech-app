@@ -108,7 +108,6 @@
           </div>
 
           <!-- Star Animation -->
-          <!-- Star Animation -->
           <div class="relative">
             <div class="-rotate-[23deg] absolute -left-96 -bottom-40">
               <lottie-player
@@ -223,7 +222,6 @@
             >
               <a id="downloadLink"></a>
             </div>
-            <input type="file" name="readFile" @change="readFile()" ref="doc" />
           </div>
           <!-- Star Animation -->
           <div class="relative">
