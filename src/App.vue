@@ -1,6 +1,8 @@
 <template>
+
   <main class="overflow-hidden">
     <!-- Navbar -->
+
     <nav class="relative container mx-auto p-6 font-rubik">
       <!-- Flex Container For All Items -->
       <div class="flex items-center justify-between">
@@ -21,6 +23,7 @@
         </div>
         <!-- Right Buttons Menu -->
         <div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
+
           <button
             class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70 border-4 border-b-[10px] border-black"
           >
@@ -87,6 +90,7 @@
     </section>
 
     <!-- Text-to-Speech Section -->
+
     <section id="tts" class="bg-[#F9F5EB] overflow-hidden">
       <div class="flex h-screen flex-col justify-center">
         <div class="w-fit mx-auto bg-white">
@@ -219,8 +223,8 @@
             >
               <a id="downloadLink"></a>
             </div>
+            <input type="file" name="readFile" @change="readFile()" ref="doc" />
           </div>
-
           <!-- Star Animation -->
           <div class="relative">
             <div class="-rotate-[23deg] absolute -right-96 -top-80">
