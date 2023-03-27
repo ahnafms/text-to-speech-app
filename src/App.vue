@@ -1,5 +1,4 @@
 <template>
-
   <main class="overflow-hidden">
     <!-- Navbar -->
 
@@ -23,7 +22,6 @@
         </div>
         <!-- Right Buttons Menu -->
         <div class="hidden items-center space-x-6 font-bold text-grayishViolet lg:flex">
-
           <button
             class="px-8 py-3 font-bold text-white bg-blue-700 rounded-full hover:opacity-70 border-4 border-b-[10px] border-black"
           >
@@ -255,8 +253,71 @@
       </div>
     </section>
     <!-- End of TTS Section -->
+    <!-- Footer -->
+    <section id="about" class="bg-[#F9F5EB] overflow-hidden">
+      <div class="text-6xl flex justify-center my-10 font-semibold">About Us</div>
+      <div class="grid grid-cols-7 px-10 py-10 gap-10 mt-10">
+        <div>
+          <img
+            src="../public/freak.jpeg"
+            class="m-auto object-cover col-start-1 rounded-full w-[175px] h-[175px]"
+          />
+          <p class="mt-2 flex justify-center">Ahnaff Musyaffa</p>
+          <p class="mt flex justify-center">5027211038</p>
+        </div>
+         <div>
+          <img
+            src="../public/ggs.jpg"
+            class="m-auto object-cover col-start-1 rounded-full w-[175px] h-[175px]"
+          />
+          <p class="mt-2 flex justify-center">I Gst Agung Bagus M.S</p>
+          <p class="mt flex justify-center">5027211046</p>
+        </div> <div>
+          <img
+            src="../public/jakir.jpeg"
+            class="m-auto object-cover col-start-1 rounded-full w-[175px] h-[175px]"
+          />
+          <p class="mt-2 flex justify-center">Dzakirozan Uzlhawasata</p>
+          <p class="mt flex justify-center">5027211066</p>
+        </div> <div>
+          <img
+            src="../public/yuni.jpeg"
+            class="m-auto object-cover col-start-1 rounded-full w-[175px] h-[175px]"
+          />
+          <p class="mt-2 flex justify-center">Midyanisa Yuniar</p>
+          <p class="mt flex justify-center">5027211025</p>
+        </div> <div>
+          <img
+            src="../public/refal.jpeg"
+            class="m-auto object-cover col-start-1 rounded-full w-[175px] h-[175px]"
+          />
+          <p class="mt-2 flex justify-center">Refaldi Agustian</p>
+          <p class="mt flex justify-center">5027211015</p>
+        </div> <div>
+          <img
+            src="../public/rend.jpeg"
+            class="m-auto object-cover col-start-1 rounded-full w-[175px] h-[175px]"
+          />
+          <p class="mt-2 flex justify-center">Rendy Anfi Yudha</p>
+          <p class="mt flex justify-center">5027211006</p>
+        </div> <div>
+          <img
+            src="../public/rando.jpeg"
+            class="m-auto object-cover col-start-1 rounded-full w-[175px] h-[175px]"
+          />
+          <p class="mt-2 flex justify-center">Rangga Aldo</p>
+          <p class="mt flex justify-center">5027211059</p>
+        </div>
+
+        <!-- <img src="../public/ggs.jpg" class="col-span-3" />
+        <img src="../public/jakir.jpeg" class="col-span-3" />
+        <img src="../public/rando.jpeg" class="col-span-3" />
+        <img src="../public/refal.jpeg" class="col-span-3" />
+        <img src="../public/yuni.jpeg" class="col-span-3" />
+        <img src="../public/rend.jpeg" class="h-full object-cover col-span-3" /> -->
+      </div>
+    </section>
   </main>
-  <!-- Footer -->
 </template>
 
 <script>
